@@ -1,0 +1,33 @@
+<div fxLayout="column" fxLayoutAlign="center center" style="width: 100%;min-height: 100vh;">
+  <form [formGroup]="myGroup" style="width: 80%;" fxLayout="column" fxLayoutAlign="center center">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input type="text" matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName="email">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Age</mat-label>
+      <input type="number" matInput formControlName="age">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Degree</mat-label>
+      <mat-select formControlName="degree">
+        <mat-option value="cse">CSE</mat-option>
+        <mat-option value="it">IT</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Address</mat-label>
+      <textarea type="text" matInput formControlName="address"></textarea>
+    </mat-form-field>
+  </form>
+  <div class="full-width" fxLayoutAlign="center center" fxLayoutGap="5%">
+    <button mat-raised-button color="warn" (click)="demo()" >Reset</button>
+    <button mat-raised-button color="primary" (click)="onSubmit()" >Submit</button>
+  </div>
+</div>
+<app-student-list *ngIf="showPaginator" (val)="this.ngOnInit()" [data]="23"></app-student-list>
+
